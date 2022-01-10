@@ -1,6 +1,8 @@
 package DTO;
 
 import java.util.List;
+import java.util.TimeZone;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class WeatherDTO {
@@ -105,4 +107,48 @@ public class WeatherDTO {
 	public Rain getRain() { return rain; }
 
 	public Snow getSnow() { return snow;}
+
+	public boolean visibilityIsInteger(){
+		return visibility.getClass() == Integer.class;}
+
+	public boolean timezoneIsInteger(){
+		return timezone.getClass() == Integer.class;}
+
+	public boolean dtIsInteger(){
+		return dt.getClass() == Integer.class;}
+
+	public boolean nameIsString(){
+		return name.getClass() == String.class;}
+
+	public boolean codIsInteger(){
+		return cod.getClass() == Integer.class;}
+
+	public boolean idIsInteger(){
+		return id instanceof Integer;}
+
+	public boolean baseIsString(){
+		return base instanceof String;}
+
+	public boolean weatherIsList(){
+		return weather instanceof List<WeatherItem>;
+	}
+
+	public boolean cloudReturnsCloud(){
+		return clouds instanceof Clouds;}
+
+	public boolean mainReturnsMain(){
+		return main instanceof Main;}
+
+	public boolean sysReturnsSys(){
+		return sys instanceof Sys;}
+
+	public boolean coordReturnsCoord(){
+		return coord instanceof Coord;}
+
+	public boolean windReturnsWind(){
+		return wind instanceof Wind;}
+
+	public boolean weatherContainsWeatherItem(){
+		return weather.size() >0;
+	}
 }
