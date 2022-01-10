@@ -88,9 +88,7 @@ public class WeatherDTO {
 		return name;
 	}
 
-	public Integer getCod(){
-		return cod;
-	}
+	public Integer getCod(){return cod;	}
 
 	public Integer getId(){
 		return id;
