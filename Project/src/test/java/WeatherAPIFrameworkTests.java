@@ -32,7 +32,7 @@ public class WeatherAPIFrameworkTests {
     }
 
     @Test
-    @DisplayName("Check that the dt is an integer")
+    @DisplayName("Check that the dt is an Integer")
     public void testDtIsInteger() {
         Assertions.assertTrue(weatherDTO.dtIsInteger());
     }
@@ -44,13 +44,13 @@ public class WeatherAPIFrameworkTests {
     }
 
     @Test
-    @DisplayName("Check that the cod is an integer")
+    @DisplayName("Check that the cod is an Integer")
     public void testCodIsInteger() {
         Assertions.assertTrue(weatherDTO.codIsInteger());
     }
 
     @Test
-    @DisplayName("Check that the id is an integer")
+    @DisplayName("Check that the id is an Integer")
     public void testIdIsInteger() {
         Assertions.assertTrue(weatherDTO.idIsInteger());
     }
@@ -59,6 +59,42 @@ public class WeatherAPIFrameworkTests {
     @DisplayName("Check that the base is a String")
     public void baseIsString() {
         Assertions.assertTrue(weatherDTO.baseIsString());
+    }
+
+    @Test
+    @DisplayName("Check that weather is a List")
+    public void weatherIsList(){
+        Assertions.assertTrue(weatherDTO.weatherIsList());
+    }
+
+    @Test
+    @DisplayName("Check that clouds returns Clouds")
+    public void cloudReturnsClouds(){
+        Assertions.assertTrue(weatherDTO.cloudReturnsCloud());
+    }
+
+    @Test
+    @DisplayName("Check that main returns Main")
+    public void mainReturnsMain(){
+        Assertions.assertTrue(weatherDTO.mainReturnsMain());
+    }
+
+    @Test
+    @DisplayName("Check that sys returns Sys")
+    public void sysReturnsSys(){
+        Assertions.assertTrue(weatherDTO.sysReturnsSys());
+    }
+
+    @Test
+    @DisplayName("Check that coord returns Coord")
+    public void coordReturnsCoord(){
+        Assertions.assertTrue(weatherDTO.coordReturnsCoord());
+    }
+
+    @Test
+    @DisplayName("Check that wind returns Wind")
+    public void windReturnsWind(){
+        Assertions.assertTrue(weatherDTO.windReturnsWind());
     }
 }
 
