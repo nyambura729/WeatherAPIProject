@@ -95,4 +95,30 @@ public class WeatherDTO {
 	public Wind getWind(){
 		return wind;
 	}
-}
+
+	public boolean visibilityIsInteger(){
+		return visibility.getClass() == Integer.class;}
+
+	public boolean timezoneIsInteger(){
+		return timezone.getClass() == Integer.class;}
+
+	public boolean dtIsInteger(){
+		return dt.getClass() == Integer.class;}
+
+	public boolean nameIsString(){
+		return name.getClass() == String.class;}
+
+	public boolean codIsInteger(){
+		return cod.getClass() == Integer.class;}
+
+	public boolean idIsInteger(){
+		return id instanceof Integer;}
+
+	public boolean baseIsString(){
+		return base instanceof String;}
+	}
+
+
+
+
+
