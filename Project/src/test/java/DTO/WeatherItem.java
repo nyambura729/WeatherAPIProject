@@ -2,6 +2,8 @@ package DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.regex.Pattern;
+
 public class WeatherItem{
 
 	@JsonProperty("icon")
@@ -31,4 +33,12 @@ public class WeatherItem{
 	public Integer getId(){
 		return id;
 	}
+
+	public boolean checkIconFormat(String icon) {
+		String matchRegex = "[0-9]{2}[d|n]";
+		boolean result = Pattern.matches(matchRegex, icon);
+		return result;
+	}
+
+	public boolean checkIdRange(Integer id) { return (id >= 200 && id <= 804);}
 }

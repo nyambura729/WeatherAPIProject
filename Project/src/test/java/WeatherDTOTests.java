@@ -1,11 +1,14 @@
+import DTO.Coord;
+import DTO.WeatherDTO;
 import Injection.Injector;
 import org.junit.jupiter.api.*;
-import DTO.WeatherDTO;
 import Connection.ConnectionManager;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-public class WeatherAPIFrameworkTests {
-    private static WeatherDTO weatherDTO;
-    private static int statusCode;
+public class WeatherDTOTests {
+    public static WeatherDTO weatherDTO;
+    public static int statusCode;
 
     @BeforeAll
     public static void init() {
@@ -102,6 +105,4 @@ public class WeatherAPIFrameworkTests {
     public void weatherContainsWeatherItem(){
         Assertions.assertTrue(weatherDTO.weatherContainsWeatherItem());
     }
-
 }
-
