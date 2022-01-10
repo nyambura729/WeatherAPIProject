@@ -1,5 +1,5 @@
-import DTO.Main;
 import DTO.WeatherDTO;
+import Injection.Injector;
 import org.junit.jupiter.api.*;
 import DTO.WeatherItem;
 import Connection.ConnectionManager;

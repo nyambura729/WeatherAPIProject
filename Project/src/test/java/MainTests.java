@@ -1,8 +1,8 @@
 import DTO.WeatherDTO;
+import Injection.Injector;
 import org.junit.jupiter.api.*;
 import DTO.Main;
 import Connection.ConnectionManager;
-import org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -1,3 +1,5 @@
+package Injection;
+
 import DTO.WeatherDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

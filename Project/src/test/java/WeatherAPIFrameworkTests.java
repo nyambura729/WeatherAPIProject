@@ -1,7 +1,7 @@
+import Injection.Injector;
 import org.junit.jupiter.api.*;
 import DTO.WeatherDTO;
 import Connection.ConnectionManager;
-import org.junit.jupiter.api.Assertions.*;
 
 public class WeatherAPIFrameworkTests {
     private static WeatherDTO weatherDTO;

@@ -1,8 +1,8 @@
 import DTO.WeatherDTO;
+import Injection.Injector;
 import org.junit.jupiter.api.*;
 import DTO.Coord;
 import Connection.ConnectionManager;
-import org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
