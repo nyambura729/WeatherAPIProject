@@ -2,7 +2,7 @@ package DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Clouds{
+public class Clouds {
 
 	@JsonProperty("all")
 	private Integer all;

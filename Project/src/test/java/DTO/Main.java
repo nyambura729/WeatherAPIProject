@@ -45,4 +45,10 @@ public class Main{
 	public Double getTempMax(){
 		return tempMax;
 	}
+
+	public boolean checkTempsAboveZero(Double temp) { return temp > 0;}
+
+	public boolean checkPressureRange(Integer pressure) { return (pressure > 800 && pressure < 2000);}
+
+	public boolean checkHumidityRange(Integer humidity) { return (humidity > 0 && humidity <= 100);}
 }
