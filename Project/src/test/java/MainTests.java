@@ -44,6 +44,14 @@ public class MainTests {
         public void checkPressureInValidRange() { Assertions.assertTrue(main.checkPressureRange(main.getPressure()));}
 
         @Test
+        @DisplayName("Check that sea level pressure is between 800 and 2000 (hPa) exclusive")
+        public void checkSeaLevelInValidRange() { Assertions.assertTrue(main.checkSeaLevelRange(main.getSeaLevel()));}
+
+        @Test
+        @DisplayName("Check that ground level pressure is between 800 and 2000 (hPa) excluive")
+        public void checkGrndLevelInValidRange() { Assertions.assertTrue(main.checkGrndLevelRange(main.getGrndLevel()));}
+
+        @Test
         @DisplayName("Check humidity falls between 0% (exclusive) and 100% (inclusive)")
         public void checkHumidityInValidRange() { Assertions.assertTrue(main.checkHumidityRange(main.getHumidity()));}
     }

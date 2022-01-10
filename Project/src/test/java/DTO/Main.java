@@ -2,7 +2,7 @@ package DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Main{
+public class Main {
 
 	@JsonProperty("temp")
 	private Double temp;
@@ -22,33 +22,70 @@ public class Main{
 	@JsonProperty("temp_max")
 	private Double tempMax;
 
-	public Double getTemp(){
+	@JsonProperty("sea_level")
+	private Integer seaLevel;
+
+	@JsonProperty("ground_level")
+	private Integer grndLevel;
+
+	public Double getTemp() {
 		return temp;
 	}
 
-	public Double getTempMin(){
+	public Double getTempMin() {
 		return tempMin;
 	}
 
-	public Integer getHumidity(){
+	public Integer getHumidity() {
 		return humidity;
 	}
 
-	public Integer getPressure(){
+	public Integer getPressure() {
 		return pressure;
 	}
 
-	public Double getFeelsLike(){
+	public Double getFeelsLike() {
 		return feelsLike;
 	}
 
-	public Double getTempMax(){
+	public Double getTempMax() {
 		return tempMax;
 	}
 
-	public boolean checkTempsAboveZero(Double temp) { return temp > 0;}
+	public Integer getSeaLevel() {
+		return seaLevel;
+	}
 
-	public boolean checkPressureRange(Integer pressure) { return (pressure > 800 && pressure < 2000);}
+	public Integer getGrndLevel() {
+		return grndLevel;
+	}
 
-	public boolean checkHumidityRange(Integer humidity) { return (humidity > 0 && humidity <= 100);}
+	public boolean checkTempsAboveZero(Double temp) {
+		return temp > 0;
+	}
+
+	public boolean checkPressureRange(Integer pressure) {
+		return (pressure > 800 && pressure < 2000);
+	}
+
+	public boolean checkHumidityRange(Integer humidity) {
+		return (humidity > 0 && humidity <= 100);
+	}
+
+	public boolean checkSeaLevelRange(Integer seaLevel) {
+		if (seaLevel != null) {
+			return (seaLevel > 800 && seaLevel < 2000);
+		} else {
+			return true;
+		}
+	}
+
+	public boolean checkGrndLevelRange(Integer grndLevel) {
+		if (grndLevel != null) {
+			return (grndLevel > 800 && grndLevel < 2000);
+		}
+		else {
+			return true;
+		}
+	}
 }

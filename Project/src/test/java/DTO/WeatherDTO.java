@@ -44,6 +44,12 @@ public class WeatherDTO {
 	@JsonProperty("wind")
 	private Wind wind;
 
+	@JsonProperty("rain")
+	private Rain rain;
+
+	@JsonProperty("snow")
+	private Snow snow;
+
 	public Integer getVisibility(){
 		return visibility;
 	}
@@ -95,4 +101,8 @@ public class WeatherDTO {
 	public Wind getWind(){
 		return wind;
 	}
+
+	public Rain getRain() { return rain; }
+
+	public Snow getSnow() { return snow;}
 }

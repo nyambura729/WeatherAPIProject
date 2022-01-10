@@ -16,9 +16,17 @@ public class WindTests {
         wind = weatherDTO.getWind();
     }
 
-    @Test
-    @DisplayName("Check that speed has 2 decimal places")
-    public void checkSpeedHas2DP() { Assertions.assertTrue(wind.checkSpeedFormat(wind.getSpeed()));}
+    @Nested
+    @DisplayName("Checking that the values are formatted correctly")
+    class checkingFormat {
+        @Test
+        @DisplayName("Check that speed has 2 decimal places")
+        public void checkSpeedHas2DP() { Assertions.assertTrue(wind.checkSpeedFormat(wind.getSpeed()));}
+
+        @Test
+        @DisplayName("Check that gust has 2 decimal places")
+        public void checkGustHas2DP() { Assertions.assertTrue(wind.checkGustFormat(wind.getGust()));}
+    }
 
     @Nested
     @DisplayName("Checking that speed and direction are in valid ranges")
@@ -30,6 +38,10 @@ public class WindTests {
         @Test
         @DisplayName("Check that direction falls between 0 degrees and 360 degrees inclusve")
         public void checkDirectionInValidRange() { Assertions.assertTrue(wind.checkDirectionRange(wind.getDeg()));}
+
+        @Test
+        @DisplayName("Check tht gust falls between 0m/s and 105m/s inclusive")
+        public void checkGustInValidRange() { Assertions.assertTrue(wind.checkGustRange(wind.getGust()));}
     }
 
     @Nested

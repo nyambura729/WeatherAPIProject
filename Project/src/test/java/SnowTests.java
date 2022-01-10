@@ -1,3 +1,4 @@
+import DTO.Snow;
 import DTO.WeatherDTO;
 import Injection.Injector;
 import org.junit.jupiter.api.*;
@@ -6,23 +7,25 @@ import Connection.ConnectionManager;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class RainTests {
+public class SnowTests {
     public static WeatherDTO weatherDTO;
-    public static Rain rain;
+    public static Snow snow;
 
     @BeforeAll
     public static void init() {
         weatherDTO = Injector.injectWeatherDTO(ConnectionManager.getConnectionCity("London"));
         if (weatherDTO.getRain() != null) {
-            rain = weatherDTO.getRain();
+            snow = weatherDTO.getSnow();
         } else {
-            rain = new Rain();
+            snow = new Snow();
         }
     }
 
     @Test
-    @DisplayName("Check that rain is not null")
-    public void checkRainNotNull() { Assertions.assertTrue(rain != null);}
+    @DisplayName("Check that snow is not null")
+    public void checkRainNotNull() {
+        Assertions.assertTrue(snow != null);
+    }
 
     @Nested
     @DisplayName("Checking that the values are formatted correctly")
@@ -30,13 +33,13 @@ public class RainTests {
         @Test
         @DisplayName("Check that 1h has 1 decimal place")
         public void checkOneHourFormat() {
-            Assertions.assertTrue(rain.checkRainFormat(rain.getOneHour()));
+            Assertions.assertTrue(snow.checkSnowFormat(snow.getOneHour()));
         }
 
         @Test
         @DisplayName("Check that 3h has 1 decimal place")
         public void checkThreeHoursFormat() {
-            Assertions.assertTrue(rain.checkRainFormat(rain.getThreeHours()));
+            Assertions.assertTrue(snow.checkSnowFormat(snow.getThreeHours()));
         }
     }
 
@@ -45,10 +48,10 @@ public class RainTests {
     class checkingRange {
         @Test
         @DisplayName("Check that one hour rainfall is between 0mm and 2000mm")
-        public void checkOneHourRange() { Assertions.assertTrue(rain.checkRainRange(rain.getOneHour()));}
+        public void checkOneHourRange() { Assertions.assertTrue(snow.checkSnowRange(snow.getOneHour()));}
 
         @Test
         @DisplayName("Check that three hour rainfall is between 0mm and 2000mm")
-        public void checkThreeHoursRange() { Assertions.assertTrue(rain.checkRainRange(rain.getThreeHours()));}
+        public void checkThreeHoursRange() { Assertions.assertTrue(snow.checkSnowRange(snow.getThreeHours()));}
     }
 }

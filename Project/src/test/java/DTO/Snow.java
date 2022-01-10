@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.regex.Pattern;
 
-public class Rain {
+public class Snow {
     @JsonProperty("1h")
     private Double oneHour;
 
@@ -15,7 +15,7 @@ public class Rain {
 
     public Double getThreeHours() { return threeHours; }
 
-    public boolean checkRainFormat(Double hours) {
+    public boolean checkSnowFormat(Double hours) {
         if (hours != null) {
             String matchRegex = "\\d+\\.\\d{1}";
             boolean result = Pattern.matches(matchRegex, String.valueOf(hours));
@@ -26,7 +26,7 @@ public class Rain {
         }
     }
 
-    public boolean checkRainRange(Double hour) {
+    public boolean checkSnowRange(Double hour) {
         if (hour != null) {
             return (oneHour >= 0 && oneHour <= 2000);
         }
