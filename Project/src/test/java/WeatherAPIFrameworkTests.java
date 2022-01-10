@@ -1,3 +1,4 @@
+import DTO.WeatherItem;
 import org.junit.jupiter.api.*;
 import DTO.WeatherDTO;
 import Connection.ConnectionManager;
@@ -96,5 +97,12 @@ public class WeatherAPIFrameworkTests {
     public void windReturnsWind(){
         Assertions.assertTrue(weatherDTO.windReturnsWind());
     }
+
+    @Test
+    @DisplayName("Check that weather contains at least 1 Weather Item")
+    public void weatherContainsWeatherItem(){
+        Assertions.assertTrue(weatherDTO.weatherContainsWeatherItem());
+    }
+
 }
 

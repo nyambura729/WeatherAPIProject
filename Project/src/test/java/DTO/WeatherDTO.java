@@ -138,6 +138,9 @@ public class WeatherDTO {
 	public boolean windReturnsWind(){
 		return wind instanceof Wind;}
 
+	public boolean weatherContainsWeatherItem(){
+		return weather.size() >0;
+	}
 	}
 
 
