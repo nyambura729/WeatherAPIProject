@@ -17,6 +17,22 @@ public class WeatherAPIFrameworkTests {
             Assertions.assertTrue(statusCode == 200); }
 
 
+        @Test
+        @DisplayName("Test to get the city and state")
+        public void testCityStateCode() {
+            weatherDTO = Injector.injectWeatherDTO(ConnectionManager.getConnectionCityState("Dothan","US-AL"));
+            statusCode = ConnectionManager.getStatusCode(ConnectionManager.getConnectionCityState("Dothan","US-AL"));
+            Assertions.assertEquals(200, statusCode); }
+
+
+        @Test
+        @DisplayName("Test to get the city, state and country")
+        public void testCityStateCountryCode() {
+            weatherDTO = Injector.injectWeatherDTO(ConnectionManager.getConnectionCityStateCountry("Dothan","US-AL","US"));
+            statusCode = ConnectionManager.getStatusCode(ConnectionManager.getConnectionCityStateCountry("Dothan","US-AL","US"));
+            Assertions.assertEquals(200, statusCode); }
+
+
         @ParameterizedTest
         @CsvSource({
                 "UK",
@@ -31,18 +47,6 @@ public class WeatherAPIFrameworkTests {
             statusCode = ConnectionManager.getStatusCode(ConnectionManager.getConnectionCity(city));
             Assertions.assertFalse(statusCode == 200);
         }
-
-
-
-
-
-
-        @Test
-        @DisplayName("Test to get the city and state")
-        public void testCityStateCode() {
-            weatherDTO = Injector.injectWeatherDTO(ConnectionManager.getConnectionCityState("Dothan","US-AL"));
-            statusCode = ConnectionManager.getStatusCode(ConnectionManager.getConnectionCityState("Dothan","US-AL"));
-            Assertions.assertEquals(200, statusCode); }
 
         @ParameterizedTest
         @CsvSource({
@@ -59,12 +63,6 @@ public class WeatherAPIFrameworkTests {
             Assertions.assertFalse(statusCode == 200);
         }
 
-        @Test
-        @DisplayName("Test to get the city, state and country")
-        public void testCityStateCountryCode() {
-            weatherDTO = Injector.injectWeatherDTO(ConnectionManager.getConnectionCityStateCountry("Dothan","US-AL","US"));
-            statusCode = ConnectionManager.getStatusCode(ConnectionManager.getConnectionCityStateCountry("Dothan","US-AL","US"));
-            Assertions.assertEquals(200, statusCode); }
 
         @ParameterizedTest
         @CsvSource({
